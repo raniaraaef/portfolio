@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Portfolio PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        .loading.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>📄 Generate Portfolio PDF</h1>
+    <p>Click the button below to generate a PDF version of your portfolio</p>
+    
+    <button onclick="generatePDF()">Download Portfolio as PDF</button>
+    <button onclick="window.open('https://raniaraaef.github.io/portfolio/', '_blank')">View Live Portfolio</button>
+    
+    <div id="status"></div>
+    <div class="loading" id="loading">⏳ Generating PDF... Please wait...</div>
+
+    <script>
+        async function generatePDF() {
+            const status = document.getElementById('status');
+            const loading = document.getElementById('loading');
+            
+            try {
+                loading.classList.add('active');
+                status.innerHTML = '';
+                
+                // Fetch the portfolio page
+                const response = await fetch('https://raniaraaef.github.io/portfolio/');
+                const html = await response.text();
+                
+                // Create a temporary container
+                const container = document.createElement('div');
+                container.innerHTML = html;
+                document.body.appendChild(container);
+                
+                // PDF options
+                const opt = {
+                    margin: 10,
+                    filename: 'Rania-Raaef-Portfolio.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, useCORS: true, logging: false },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                
+                // Generate PDF
+                await html2pdf().set(opt).from(container).save();
+                
+                // Clean up
+                document.body.removeChild(container);
+                loading.classList.remove('active');
+                status.innerHTML = '✅ PDF generated successfully!';
+                status.style.color = 'green';
+                
+            } catch (error) {
+                loading.classList.remove('active');
+                status.innerHTML = '❌ Error: ' + error.message + '<br><br>Please try using browser Print (Ctrl+P) instead.';
+                status.style.color = 'red';
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
