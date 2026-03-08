@@ -107,7 +107,7 @@ contactForm.addEventListener('submit', (e) => {
     const message = document.getElementById('message').value;
     
     // Create mailto link
-    const mailtoLink = `mailto:raniarraef00@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    const mailtoLink = `mailto:raniaraaef00@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
     // Open email client
     window.location.href = mailtoLink;
