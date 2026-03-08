@@ -66,7 +66,7 @@ You can deploy this portfolio to:
 
 ## Contact
 
-- Email: raniarraef00@gmail.com
+- Email: raniaraaef00@gmail.com
 - GitHub: [github.com/raniaraaef](https://github.com/raniaraaef)
 - LinkedIn: [linkedin.com/in/rania-raaef-23a071244](https://www.linkedin.com/in/rania-raaef-23a071244)
 
