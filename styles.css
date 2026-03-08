@@ -715,6 +715,53 @@ section {
     }
 }
 
+/* Print Styles */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .navbar {
+        position: relative !important;
+        box-shadow: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero {
+        min-height: auto !important;
+        page-break-after: avoid;
+    }
+    
+    .skill-category,
+    .project-card,
+    .timeline-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+    
+    a[href]:after {
+        content: none !important;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
