@@ -725,11 +725,37 @@ section {
     
     body {
         background: white !important;
+        color: #000 !important;
     }
     
     .navbar {
         position: relative !important;
         box-shadow: none !important;
+        background: white !important;
+        border-bottom: 2px solid #1e3a8a !important;
+    }
+    
+    .nav-brand {
+        color: #1e3a8a !important;
+    }
+    
+    .hero {
+        min-height: auto !important;
+        page-break-after: avoid;
+        background: white !important;
+        padding: 40px 0 !important;
+    }
+    
+    .hero-title,
+    .section-title,
+    h3, h4 {
+        color: #1e3a8a !important;
+    }
+    
+    .hero-subtitle,
+    .hero-description,
+    p, span {
+        color: #333 !important;
     }
     
     section {
@@ -737,11 +763,28 @@ section {
         break-inside: avoid;
         opacity: 1 !important;
         transform: none !important;
+        background: white !important;
+        padding: 30px 0 !important;
     }
     
-    .hero {
-        min-height: auto !important;
-        page-break-after: avoid;
+    .about {
+        background: #f8f9fa !important;
+    }
+    
+    .about-info,
+    .skill-category,
+    .project-card,
+    .timeline-content {
+        background: white !important;
+        border: 2px solid #1e3a8a !important;
+        box-shadow: none !important;
+    }
+    
+    .skill-tag,
+    .project-tech span {
+        background: #e3f2fd !important;
+        color: #1e3a8a !important;
+        border: 1px solid #1e3a8a !important;
     }
     
     .skill-category,
@@ -751,14 +794,54 @@ section {
         break-inside: avoid;
         opacity: 1 !important;
         transform: none !important;
+        margin-bottom: 20px !important;
     }
     
-    .hamburger {
+    .timeline::before {
+        background: #1e3a8a !important;
+    }
+    
+    .timeline-dot {
+        background: #1e3a8a !important;
+        border-color: white !important;
+    }
+    
+    .contact-item i {
+        background: #1e3a8a !important;
+    }
+    
+    .hamburger,
+    .social-links,
+    .social-links-contact,
+    .hero-buttons,
+    .project-links,
+    .contact-form {
         display: none !important;
+    }
+    
+    .hero-image img {
+        max-width: 250px !important;
+        border: 2px solid #1e3a8a !important;
+    }
+    
+    .project-image {
+        height: 180px !important;
+        border-bottom: 2px solid #1e3a8a !important;
+    }
+    
+    a {
+        color: #1e3a8a !important;
+        text-decoration: none !important;
     }
     
     a[href]:after {
         content: none !important;
+    }
+    
+    .footer {
+        background: #1e3a8a !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact !important;
     }
 }
 
